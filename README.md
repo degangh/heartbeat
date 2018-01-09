@@ -1,6 +1,6 @@
-# heartbeat
+# HeartBeat
 
-# Name Convention
+### Name Convention
 Table name: 
 
 Column name: 
