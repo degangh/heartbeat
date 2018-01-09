@@ -4,9 +4,10 @@ class model{
     public $table_name = "";
     public $where;
     public $orderBy;
+    public $group;
 
     public function table($table){
-        $this->query = "select * from " . $table . " ";
+        $this->tableName= "select * from " . $table . " ";
 
         return $this;
     }
@@ -19,11 +20,20 @@ class model{
 
     public function orderBy($field, $option){
         $this->orderBy .= " order by " . $field . " " . $option;
+
         return $this;
+    }
+
+    public function combineSql(){
+        $this->query .= $where . $orderBy;
     }
 
     public function getAll(){
 
+    }
+
+    public function get(){
+        $this->query .= $this->where . $this->orderBy;
     }
 
     public function chunk(){
@@ -42,10 +52,17 @@ class model{
 
     }
 
+    public function toSql(){
+        var_dump($this->query);
+    }
+
 }
+
+//testing 
 
 $m = new Model();
 
-$m->table("tasks")->where("date", ">=", time())->orderBy;
+$m->table("tasks")->toSql();
 
-echo $m->query;
+
+
