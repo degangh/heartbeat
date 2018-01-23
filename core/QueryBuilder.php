@@ -1,4 +1,5 @@
 <?php
+namespace \Core;
 class QueryBuilder{
     public $query = "";
     public $tableName = "";
@@ -58,7 +59,7 @@ class QueryBuilder{
     }
 
     public function save(){
-
+        echo "save in builder";
     }
 
     public function toSql(){
