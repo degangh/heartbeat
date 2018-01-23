@@ -1,0 +1,13 @@
+{
+    "name": "nicolas/heartbeat",
+    "description": "another php framework",
+    "type": "project",
+    "license": "GNU GPLv3",
+    "authors": [
+        {
+            "name": "nicolas",
+            "email": "degang.huang@gmail.com"
+        }
+    ],
+    "require": {}
+}
