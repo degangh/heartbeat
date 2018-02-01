@@ -1,6 +1,7 @@
 <?php
-namespace \Car;
+namespace app\model;
 
+use core\Model;
 class Car extends Model{
     
 }

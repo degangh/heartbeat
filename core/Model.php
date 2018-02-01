@@ -1,5 +1,7 @@
 <?php
-namespace \Core;
+namespace core;
+
+use core\QueryBuilder;
 class Model{
    
     public $query = null;

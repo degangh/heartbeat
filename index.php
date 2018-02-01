@@ -1,8 +1,8 @@
 <?php
 
-require "vendor/autoload.php";
+require __DIR__ . "/vendor/autoload.php";
 
-$controller = $_GET['m'];
+$controller = "\\app\controller\\".$_GET['m'];
 
 $c = new $controller();
 
