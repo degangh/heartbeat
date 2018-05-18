@@ -1,9 +1,9 @@
 # HeartBeat
 
 ### Name Convention
-Table name: 
+Table name: snake_case
 
-Column name: 
+Column name: snake_case
 
 Class name: CamelCase
 
