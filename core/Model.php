@@ -3,7 +3,7 @@ namespace core;
 
 use core\db;
 
-abstract class Record
+abstract class Model
 {
     
     protected $pk = "id";
