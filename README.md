@@ -10,3 +10,5 @@ Class name: CamelCase
 Property name: camelCase
 
 Method name: camelCase
+
+add a simple orm model
