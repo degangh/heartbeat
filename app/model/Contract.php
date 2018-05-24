@@ -1,7 +1,7 @@
 <?php
 
 
-class Contract extends Record
+class Contract extends Model
 {
     protected $table = "contract";
     protected $process_id = "";
