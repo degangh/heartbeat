@@ -1,8 +1,8 @@
 {
     "name": "nicolas/heartbeat",
-    "description": "another php framework",
+    "description": "Another php mvc framework",
     "type": "project",
-    "license": "GNU GPLv3",
+    "license": "MIT",
     "authors": [
         {
             "name": "nicolas",
