@@ -1,5 +1,5 @@
 <?php
-namespace "core";
+namespace core;
 
 class db {
     static public function connect()
