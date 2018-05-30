@@ -43,8 +43,7 @@ abstract class Model
         $this->db->query($sql); 
         
         if (!isset($this->$pk)) $this->$pk = $this->db->insert_id;
-        
-        var_dump($this->db->error . $sql);
+
     }
     //find record by id
     public function findOne($id = null)
@@ -82,6 +81,7 @@ abstract class Model
     }
     
 }
+
 function camelCaseToUnderscore($input)
 {
     return strtolower(preg_replace('/(?<!^)[A-Z]/', '_$0', $input));
