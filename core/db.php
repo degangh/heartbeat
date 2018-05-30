@@ -5,5 +5,10 @@ class db {
     static public function connect()
     {
         return new mysqli("localhost", "root", "", "tasks");
-    } 
+    }
+
+    static public function query()
+    {
+        
+    }
 }
