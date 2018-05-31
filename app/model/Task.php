@@ -4,10 +4,10 @@ namespace app\model;
 
 use \core\Model;
 
-class Contract extends Model
+class Task extends Model
 {
-    protected $table = "contract";
     protected $process_id = "";
+    protected $table = "tasks";
 
     
     public function __construct()
