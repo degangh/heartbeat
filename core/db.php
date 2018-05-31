@@ -7,8 +7,4 @@ class db {
         return new mysqli("localhost", "root", "", "tasks");
     }
 
-    static public function query()
-    {
-        
-    }
 }
