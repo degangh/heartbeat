@@ -7,7 +7,11 @@ class about {
     public function index(){
         echo "About me";
 
-        $c = new \app\model\Task();
+        $t = new \app\model\Task();
+
+        $t->name = "test my mvc";
+
+        $t->save();
 
     }
 }
