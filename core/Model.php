@@ -14,10 +14,11 @@ abstract class Model
     {
         if (!$this->table) 
         
-        $this->table= camelCaseToUnderscore(get_class($this));
+        
+        $this->table= camelCaseToUnderscore($this->getClassName(get_class(($this))));
         
         $this->db = db::connect();
-        
+                
         $this->fields();
         
     }
@@ -73,11 +74,28 @@ abstract class Model
     {
         
         $sql = "select * from " . $this->table ;
-        echo $sql;
-        $tableFields = $this->db->query($sql)->fetch_fields();
-        foreach ($tableFields as $field) $fields[] = $field->name;
+
+        
+        $result  = $this->db->query($sql);
+        
+        if ($result) 
+        {
+            $tableFields = $result->fetch_fields();
+            foreach ($tableFields as $field) $fields[] = $field->name;
+        }
+
+        else
+        {
+            die ($this->db->error);
+        }
+
         
         $this->fields = $fields;
+    }
+
+    public function getClassName($full_name) {
+        $path = explode('\\',$full_name);
+        return array_pop($path);
     }
     
 }
