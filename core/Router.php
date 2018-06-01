@@ -2,19 +2,34 @@
 namespace core;
 class Router 
 {
-    protected $routes = array();
+    protected $routes = array(
+        "POST" => array(),
+        "GET" => array()
+    );
     
-    public function add($uri, $handler)
+    public function post($uri, $handler)
+    {
+        $this->routes['POST'][$uri] = $handler;
+    }
+
+    public function get($uri, $handler)
+    {
+        $this->routes['GET'][$uri] = $handler;
+    }
+
+    /* todo
+    public function patch($uri, $handler)
     {
         $this->routes[$uri] = $handler;
     }
+    */
 
-    public function go($uri)
+    public function go($uri, $request_type)
     {
         try
         {
-            if (!array_key_exists($uri,$this->routes)) throw new \Exception("No route defined");
-            $handler = $this->routes[$uri];
+            if (!array_key_exists($uri,$this->routes[$request_type])) throw new \Exception("No route defined");
+            $handler = $this->routes[$request_type][$uri];
         
             $controller = explode("@", $handler)[0];
             $method = explode("@", $handler)[1];
