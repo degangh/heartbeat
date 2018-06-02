@@ -13,14 +13,16 @@ Routing
 
 */
 
+use \core\Router;
+use \core\Request;
 
-$router = new \core\Router();
+$uri = Request::uri();  
+
+$router = new Router();
 
 $router->get("home","home@index");
 $router->get("about","about@index");
 
-$router->go($_SERVER['QUERY_STRING'], $_SERVER['REQUEST_METHOD']);
-
-
+$router->go($uri, $_SERVER['REQUEST_METHOD']);
 
 
